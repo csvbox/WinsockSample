@@ -20,17 +20,12 @@ int wmain(int argc, wchar_t **argv)
     WSADATA wsaData;
     int iResult;
     INT iRetval;
-
     DWORD dwRetval;
-
     int i = 1;
-
     ADDRINFOW *result = NULL;
     ADDRINFOW *ptr = NULL;
     ADDRINFOW hints;
-
     LPSOCKADDR sockaddr_ip;
-
     wchar_t ipstringbuffer[256];
     DWORD ipbufferlength = 256;
 
@@ -40,10 +35,9 @@ int wmain(int argc, wchar_t **argv)
         wprintf(L"getaddrinfow provides protocol-independent translation\n");
         wprintf(L"   from an Unicode host name to an IP address\n");
         wprintf(L"%ws example usage\n", argv[0]);
-        wprintf(L"   %ws www.aspect.com 0\n", argv[0]);
+        wprintf(L"   %ws www.example.com 0\n", argv[0]);
         return 1;
     }
-
 
     // Initialize Winsock
     iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -64,7 +58,6 @@ int wmain(int argc, wchar_t **argv)
     wprintf(L"hostname = %ws, ", argv[1]);
     wprintf(L"servname (or port) = %ws\n\n", argv[2]);
 
-
     //--------------------------------
     // Call GetAddrinfoW(). If the call succeeds,
     // the result variable will hold a linked list
@@ -76,7 +69,6 @@ int wmain(int argc, wchar_t **argv)
         WSACleanup();
         return 1;
     }
-
     wprintf(L"GetAddrInfoW returned success\n");
 
     // Retrieve each address and print out the hex bytes

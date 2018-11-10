@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     DWORD dwRetval = getnameinfo((struct sockaddr *) &saGNI,
         sizeof(struct sockaddr),
         hostname,
-        NI_MAXHOST, servInfo, NI_MAXSERV, NI_NUMERICSERV);
+        NI_MAXHOST, servInfo, NI_MAXSERV, NI_NAMEREQD | NI_NUMERICSERV);
 
     if (dwRetval != 0)
     {
