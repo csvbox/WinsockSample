@@ -32,10 +32,8 @@ int wmain(int argc, wchar_t **argv)
     // Validate the parameters
     if (argc != 3) {
         wprintf(L"usage: %ws <hostname> <port/servicename>\n", argv[0]);
-        wprintf(L"getaddrinfow provides protocol-independent translation\n");
-        wprintf(L"   from an Unicode host name to an IP address\n");
-        wprintf(L"%ws example usage\n", argv[0]);
-        wprintf(L"   %ws www.example.com 0\n", argv[0]);
+        wprintf(L"example usage:\n");
+        wprintf(L"\t%ws www.example.com 0\n", argv[0]);
         return 1;
     }
 

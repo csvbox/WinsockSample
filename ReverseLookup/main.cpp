@@ -20,8 +20,8 @@ int main(int argc, char **argv)
     // Validate the parameters
     if (argc != 3) {
         printf("usage: %s <IPv4 address> <port>\n", argv[0]);
-        printf("  to return hostname\n");
-        printf("       %s 127.0.0.1 8443\n", argv[0]);
+        printf("example usage:\n");
+        printf("\t%s 127.0.0.1 8443\n", argv[0]);
         return 1;
     }
 
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
     DWORD dwRetval = getnameinfo((struct sockaddr *) &saGNI,
         sizeof(struct sockaddr),
         hostname,
-        NI_MAXHOST, servInfo, NI_MAXSERV, NI_NAMEREQD | NI_NUMERICSERV);
+        NI_MAXHOST, servInfo, NI_MAXSERV, NI_NUMERICSERV);
 
     if (dwRetval != 0)
     {
