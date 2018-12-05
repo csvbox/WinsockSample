@@ -21,7 +21,7 @@ int wmain(int argc, wchar_t **argv)
     int iResult;
     INT iRetval;
     DWORD dwRetval;
-    int i = 1;
+    int i = 0;
     ADDRINFOW *result = NULL;
     ADDRINFOW *ptr = NULL;
     ADDRINFOW hints;
@@ -72,7 +72,7 @@ int wmain(int argc, wchar_t **argv)
     // Retrieve each address and print out the hex bytes
     for (ptr = result; ptr != NULL; ptr = ptr->ai_next) {
 
-        wprintf(L"GetAddrInfoW response %d\n", i++);
+        wprintf(L"GetAddrInfoW result[%d]\n", i++);
         wprintf(L"\tFlags: 0x%x\n", ptr->ai_flags);
         wprintf(L"\tFamily: ");
         switch (ptr->ai_family) {
